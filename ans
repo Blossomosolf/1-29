@@ -1,1 +1,33 @@
+# library
+# library
+from numpy.random import normal,uniform
+from numpy.random import seed
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+import pandas as pd
+from scipy import stats
+import math
+import pylab
+%matplotlib inline
 
+## Q1
+## 常態分配的計算
+# 計算標準常態分配記Ｘ　介於 1,-1的比例
+mu=0
+sigma=1
+b=  stats.norm.cdf(1,mu, sigma)
+print("P(Z<1)=",b)
+
+## Q2
+## 先算 p(<-1X<1)，再算  P(X>1 or X<-1)
+mu=0
+sigma=1
+b=  stats.norm.cdf(1,mu, sigma)
+a=  stats.norm.cdf(-1,mu, sigma)
+print("P(Z>1 or Z<-1)=",1-(b-a))
+
+mu=2
+sigma=2 #( 4 要開根號)
+b= stats.norm.cdf(6,mu, sigma)
+print("P(X<6)=",b)
